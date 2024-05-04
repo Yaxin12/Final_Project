@@ -1,8 +1,8 @@
-#import streamlit as st
-#import time
-#import pandas as pd
-#import plotly.express as px
-#import plotly.graph_objects as go
+import streamlit as st
+import time
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
 
 st.set_page_config(page_title='University Employee Salaries Explorer',  layout='wide', page_icon=':school:')
 
@@ -11,7 +11,7 @@ st.set_page_config(page_title='University Employee Salaries Explorer',  layout='
 #this is the header
 t1, t2 = st.columns((0.35,1)) 
 
-t1.image('image/ohio.jpg', width = 200)
+t1.image('ohio.jpg', width = 200)
 t2.title("University Employee Explorer")
 tab1, tab2 = st.tabs(["Introduction", "Employee Explorer"])
 
@@ -29,7 +29,7 @@ st.write("""
 """)
 
 with tab2:
-    salary_df = pd.read_csv('data/higher_ed_employee_salaries.csv')
+    salary_df = pd.read_csv('higher_ed_employee_salaries.csv')
 
 # Get unique values from the "Year" column
 unique_year = salary_df['Year'].unique()
