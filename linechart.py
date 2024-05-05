@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
-st.set_page_config(page_title='University Salaries in Ohio(2011 - Present)',  layout='wide', page_icon=':school:')
+#st.set_page_config(page_title='University Salaries in Ohio(2011 - Present)',  layout='wide', page_icon=':school:')
 
 #this is the header
 t1, t2 = st.columns((0.35,1)) 

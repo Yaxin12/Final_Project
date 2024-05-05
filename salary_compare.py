@@ -4,14 +4,14 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-st.set_page_config(page_title='University Salaries in Ohio(2011 - Present)',  layout='wide', page_icon=':school:')
+#st.set_page_config(page_title='University Salaries in Ohio(2011 - Present)',  layout='wide', page_icon=':school:')
 
 t1, t2 = st.columns((0.35,1)) 
 
 t1.image('ohio.jpg', width = 200)
 t2.title("University Salaries Compare" )
 tab1, tab2 = st.tabs(["Introduction", "Salaries Explorer"])
-t2.title("University Employee Salaries in Ohio(2011 - Present)")
+#t2.title("University Employee Salaries in Ohio(2011 - Present)")
 # Description of the app
 # Introduction
 with tab1:

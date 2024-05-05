@@ -12,8 +12,8 @@ show_pages(
     [
         Page("app.py", "Project Introduction", "💻"),
 
-
         Section("University Employee Salaries", "🧙‍♂️"),
+        Page("", "", "", in_section=True),
         Page("college.py", "University Explorer", ":school:", in_section=True),
         Page("salary_compare.py", "Salaries Compare", "💰", in_section=True),
         Page("linechart.py", "Salaries Linechart", ":chart:", in_section=True)
