@@ -19,7 +19,7 @@ show_pages(
     ]
 )
 #this is the header
-t1, t2 = st.columns((0.35,1)) 
+t1, t2 = st.columns((0.25,1)) 
 
 t1.image('ohio.jpg', width = 200)
 t2.title("University Employee Salaries in Ohio(2011 - Present)")
