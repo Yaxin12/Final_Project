@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-st.set_page_config(page_title='University Employee Salaries Explorer',  layout='wide', page_icon=':school:')
+#st.set_page_config(page_title='University Employee Salaries Explorer',  layout='wide', page_icon=':school:')
 
 
 
@@ -29,16 +29,22 @@ with tab1:
     💡Feel free to explore and analyze the salary data to gain insights into university employee salaries!
     """)
 
+import pandas as pd
+import streamlit as st
+
 salary_df = pd.read_csv('higher_ed_employee_salaries.csv')
+
+
 with tab2:
     # Get unique values from the "Year" column
     unique_year = salary_df['Year'].unique()
     # Convert unique years to a Python list
-    year_list = unique_year.tolist()
+    year_list = sorted(unique_year.tolist())
     # Add "All Years" option to the year list
     year_list.insert(0, 'All Years')
     # Create a selectbox for the years
     selected_year = st.selectbox('Select a Year', year_list)
+
     # Filter the DataFrame based on the selected year
     if selected_year != 'All Years':
         filtered_year_df = salary_df[salary_df['Year'] == selected_year]
@@ -102,4 +108,4 @@ with tab2:
             else:
                 if default_num_jobs > 0:
                     col.metric(label=job, value=num_staff)
-                    default_num_jobs -= 1 
+                    default_num_jobs -= 1
