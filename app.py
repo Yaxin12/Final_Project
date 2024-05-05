@@ -5,17 +5,17 @@ import plotly.express as px
 import plotly.graph_objects as go
 from st_pages import Page, Section, show_pages, add_page_title, hide_pages
 
-st.set_page_config(page_title='University Employee Salaries in Ohio(2011 - Present)',  layout='wide', page_icon=':school:')
+st.set_page_config(page_title='Exploring Staff Compensation at Ohio Universities (2011 - Present)',  layout='wide', page_icon=':school:')
 
 
 show_pages(
     [
-        Page("app.py", "Project Introduction", "💻"),
+        Page("app.py", "Introduction", "💻"),
 
         #Section("University Employee Salaries", "🧙‍♂️"),
-        Page("college.py", "University Explorer", ":school:"),
-        Page("salary_compare.py", "Salaries Compare", "💰"),
-        Page("linechart.py", "Salaries Linechart", ":chart:")
+        Page("college.py", "University Remuneration Explorer", ":school:"),
+        Page("salary_compare.py", "Compensation Compare", "💰"),
+        Page("linechart.py", "Income Trends", ":chart:")
     ]
 )
 #this is the header
@@ -41,7 +41,7 @@ with tab1:
 
 with tab2:
     st.image("The_Buckeye_Institute_Logo.png")
-    st.markdown("##### 👨‍🔧 Data come from [Buckeye Institute](https://www.buckeyeinstitute.org/about/)")
+    st.markdown("#####  Data come from [Buckeye Institute](https://www.buckeyeinstitute.org/about/)")
     st.markdown("""
     ### 📓 About Buckeye Institute
                 

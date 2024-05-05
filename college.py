@@ -12,14 +12,14 @@ import plotly.graph_objects as go
 t1, t2 = st.columns((0.35,1)) 
 
 t1.image('ohio.jpg', width = 200)
-t2.title("University Employee Explorer")
+t2.title("University Remuneration Explorer")
 tab1, tab2 = st.tabs(["Introduction", "Employee Explorer"])
 
 # Description of the app
 with tab1:
     st.write("""
-    ### 🎈Welcome to the University Employee Salaries Explorer! 
-    ### 🔎This app allows you to explore and analyze salary data for university employees.
+    ### Welcome to the University Employee Salaries Explorer! 
+    ### This app allows you to explore and analyze salary data for university employees.
     #### 🚀How to Use
     1. **Filter by Year:** Select a specific year or choose "All Years" to view data for all years.
     2. **Filter by College:** Select a college or choose "All Colleges" to view data for all colleges.
@@ -29,8 +29,6 @@ with tab1:
     💡Feel free to explore and analyze the salary data to gain insights into university employee salaries!
     """)
 
-import pandas as pd
-import streamlit as st
 
 salary_df = pd.read_csv('higher_ed_employee_salaries.csv')
 
@@ -54,7 +52,7 @@ with tab2:
     # Get unique values from the "School" column
     unique_colleges = filtered_year_df['School'].unique()
     # Convert unique colleges to a Python list
-    college_list = unique_colleges.tolist()
+    college_list = sorted(unique_colleges.tolist())
     college_list.insert(0, 'All Colleges')
     # Create a selectbox for the colleges
     selected_college = st.selectbox('Select a College', college_list)
@@ -67,7 +65,7 @@ with tab2:
     # Get unique values from the "Department" column
     unique_departments = filtered_college_df['Department'].unique()
     # Convert unique departments to a Python list
-    department_list = unique_departments.tolist()
+    department_list = sorted(unique_departments.tolist())
     department_list.insert(0, 'All Dept')
     # Create a selectbox for the departments within the selected college
     selected_department = st.selectbox('Select a Department', department_list)

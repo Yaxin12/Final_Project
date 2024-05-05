@@ -9,15 +9,15 @@ import plotly.graph_objects as go
 t1, t2 = st.columns((0.35,1)) 
 
 t1.image('ohio.jpg', width = 200)
-t2.title("University Salaries Compare" )
-tab1, tab2 = st.tabs(["Introduction", "Salaries Explorer"])
+t2.title("Compensation Compare" )
+tab1, tab2 = st.tabs(["Introduction", "Compensation Analytics"])
 #t2.title("University Employee Salaries in Ohio(2011 - Present)")
 # Description of the app
 # Introduction
 with tab1:
     st.write("""
-    ### 🎈Welcome to the University Employee Salaries Explorer!          
-    ### 🔎This interactive tool allows you to explore salary data for higher education employees. 
+    ### Welcome to the University Employee Salaries Explorer!          
+    ### This interactive tool allows you to explore salary data for higher education employees. 
     """)
 
     st.markdown("### 🚀How to Use:")

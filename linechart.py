@@ -8,7 +8,7 @@ import altair as alt
 t1, t2 = st.columns((0.35,1)) 
 
 t1.image('ohio.jpg', width = 200)
-t2.title("University Salaries Charts" )
+t2.title("Income Trends" )
 tab1, tab2 = st.tabs(["Introduction", "Salaries Charts"])
 
 with tab1:
