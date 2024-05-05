@@ -64,15 +64,41 @@ with tab2:
             y='Average Earnings'
         ).properties(
             title=f"Average Earnings for {job_description} in {filtered_df['Year'].iloc[0]}"
+        ).configure_axis(
+            labelFontSize=12,  # Adjust font size of axis labels
+            titleFontSize=14,  # Adjust font size of axis title
+            grid=False,        # Hide grid lines
+            domain=True,      # Hide axis lines
+            labelColor='black' # Set axis label color to black
         )
-    else:  # If multiple years, show as line chart
-        mm_chart = alt.Chart(filtered_df).mark_line().encode(
+    else:  # If multiple years, show as line chart with trend line
+        # Line chart
+        line_chart = alt.Chart(filtered_df).mark_line().encode(
             x='Year',
             y='Average Earnings'
-        ).properties(
+        )
+
+        # Trend line
+        trend_line = line_chart.transform_regression(
+            'Year', 'Average Earnings', method='poly', order=3
+        ).mark_line(color='lightgray')  # Adjust color to light gray
+
+        # Combine line chart and trend line
+        mm_chart = (line_chart + trend_line).properties(
             title=f"Average Earnings Over Time for {job_description}",
             width=600,
             height=400,
+        ).configure_axis(
+            labelFontSize=12,  # Adjust font size of axis labels
+            titleFontSize=14,  # Adjust font size of axis title
+            grid=False,        # Hide grid lines
+            domain=True,      # Hide axis lines
+            labelColor='black' # Set axis label color to black
         )
 
-    st.altair_chart(mm_chart)
+
+
+    # Display the Altair chart
+    st.altair_chart(mm_chart)   
+
+    st.markdown('<p style="color: lightgrey;">--：trendline</p>', unsafe_allow_html=True)
