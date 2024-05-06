@@ -61,46 +61,46 @@ with tab2:
             below_than_mean = total - higher_than_mean
             percentage_higher_than_mean = (higher_than_mean / total) * 100
 
-        # Display statistics
-        st.header('Statistics of Earnings')
-        col1, col2, col3, col4 = st.columns(4)
-        with col1:
-            if earnings_min != '--':
-                st.metric(label='Minimum Earnings', value=f"{earnings_min:.2f}")
-            else:
-                st.metric(label='Minimum Earnings', value=earnings_min)
-        with col2:
-            if earnings_max != '--':
-                st.metric(label='Maximum Earnings', value=f"{earnings_max:.2f}")
-            else:
-                st.metric(label='Maximum Earnings', value=earnings_max)
-        with col3:
-            if earnings_median != '--':
-                st.metric(label='Median Earnings', value=f"{earnings_median:.2f}")
-            else:
-                st.metric(label='Median Earnings', value=earnings_median)
-        with col4:
-            if earnings_mean != '--':
-                st.metric(label='Mean Earnings', value=f"{earnings_mean:.2f}", delta=f"{percentage_higher_than_mean:.2f}% Higher", delta_color="inverse")
-            else:
-                st.metric(label='Mean Earnings', value=earnings_mean)
-        
-        # Create a histogram to visualize the distribution of earnings
-        histogram_chart = alt.Chart(filtered_data).mark_bar(color ='darkblue').encode(
-            alt.X('Earnings', bin=True, title='Earnings'),
-            alt.Y('count()', title='Frequency')
-        ).properties(
-            width=600,
-            height=400
-        ).configure_axis(
-            labelFontSize=12,
-            titleFontSize=14,
-            grid=False,
-            domain=True,
-            labelColor='black'
-        ).properties(
-            title='Distribution of Earnings'
-        )
+            # Display statistics
+            st.header('Statistics of Earnings')
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
+                if earnings_min != '--':
+                    st.metric(label='Minimum Earnings', value=f"{earnings_min:.2f}")
+                else:
+                    st.metric(label='Minimum Earnings', value=earnings_min)
+            with col2:
+                if earnings_max != '--':
+                    st.metric(label='Maximum Earnings', value=f"{earnings_max:.2f}")
+                else:
+                    st.metric(label='Maximum Earnings', value=earnings_max)
+            with col3:
+                if earnings_median != '--':
+                    st.metric(label='Median Earnings', value=f"{earnings_median:.2f}")
+                else:
+                    st.metric(label='Median Earnings', value=earnings_median)
+            with col4:
+                if earnings_mean != '--':
+                    st.metric(label='Mean Earnings', value=f"{earnings_mean:.2f}", delta=f"{percentage_higher_than_mean:.2f}% Higher", delta_color="inverse")
+                else:
+                    st.metric(label='Mean Earnings', value=earnings_mean)
+            
+            # Create a histogram to visualize the distribution of earnings
+            histogram_chart = alt.Chart(filtered_data).mark_bar(color ='darkblue').encode(
+                alt.X('Earnings', bin=True, title='Earnings'),
+                alt.Y('count()', title='Frequency')
+            ).properties(
+                width=600,
+                height=400
+            ).configure_axis(
+                labelFontSize=12,
+                titleFontSize=14,
+                grid=False,
+                domain=True,
+                labelColor='black'
+            ).properties(
+                title='Distribution of Earnings'
+            )
 
-        # Display the histogram
-        st.altair_chart(histogram_chart)
+            # Display the histogram
+            st.altair_chart(histogram_chart)
