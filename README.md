@@ -1,6 +1,6 @@
 # University Employee Salaries in Ohio(2011 - Present)
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://finalproject-yaxin.streamlit.app)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://finalproject-yaxin.streamlit.app/)
 ## Introduction
 Publicizing university employee salaries promotes transparency and fairness, reducing discrimination and enhancing internal trust. It aids in recruiting and retaining talent, making universities more competitive. Despite being available online, the data is often inconvenient to compare.
 
@@ -29,4 +29,4 @@ this app aims to delve into the salaries of higher education employees from Ohio
 Collect more salary information for university faculty and staff, apply machine learning models to forecast future salary trends based on historical data, enabling proactive decision-making and planning.
 
 ## Streamlit App
-https://finalproject-yaxin.streamlit.app
+https://finalproject-yaxin.streamlit.app/
