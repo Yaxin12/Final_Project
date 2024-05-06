@@ -103,4 +103,4 @@ with tab2:
         )
 
         # Display the histogram
-        #st.altair_chart(histogram_chart)
+        st.altair_chart(histogram_chart)
