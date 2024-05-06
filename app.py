@@ -18,11 +18,16 @@ show_pages(
         Page("linechart.py", "Income Trends", ":chart:")
     ]
 )
-#this is the header
-t1, t2 = st.columns((0.35,1)) 
 
-t1.image('ohio.jpg', width = 200)
-t2.title("University Employee Salaries in Ohio(2011 - Present)")
+
+# Define your layout
+t1, t2 = st.columns((0.35, 1)) 
+
+# Display an image in the first column
+t1.image('ohio.jpg', width=200)
+
+# Use HTML/CSS to style the title in the second column
+t2.write('<h1 style="font-size: 36px;">Exploring Staff Compensation at Ohio Universities (2011 - Present)</h1>', unsafe_allow_html=True)
 
 st.image("CollegeProfessor_1920x1080.jpg")
 # Introduction
