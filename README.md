@@ -1,5 +1,6 @@
 # University Employee Salaries in Ohio(2011 - Present)
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://finalproject-yaxin.streamlit.app)
 ## Introduction
 Publicizing university employee salaries promotes transparency and fairness, reducing discrimination and enhancing internal trust. It aids in recruiting and retaining talent, making universities more competitive. Despite being available online, the data is often inconvenient to compare.
 
