@@ -29,3 +29,4 @@ this app aims to delve into the salaries of higher education employees from Ohio
 Collect more salary information for university faculty and staff, apply machine learning models to forecast future salary trends based on historical data, enabling proactive decision-making and planning.
 
 ## Streamlit App
+https://finalproject-yaxin.streamlit.app
