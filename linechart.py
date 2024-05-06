@@ -82,7 +82,7 @@ with tab2:
         # Trend line
         trend_line = line_chart.transform_regression(
             'Year', 'Average Earnings', method='poly', order=3
-        ).mark_line(color='lightgray')  # Adjust color to light gray
+        ).mark_line(color='lightgray', strokeDash=[5, 5])  # Adjust color to light gray
 
         # Combine line chart and trend line
         mm_chart = (line_chart + trend_line).properties(
@@ -98,7 +98,7 @@ with tab2:
         )
 
         st.altair_chart(mm_chart)
-        st.markdown('<p style="color: grey;">--：trendline</p>', unsafe_allow_html=True)
+        st.markdown('<p style="color: grey;">-- ：trendline</p>', unsafe_allow_html=True)
 
 
 
