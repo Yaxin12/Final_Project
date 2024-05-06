@@ -13,9 +13,9 @@ tab1, tab2 = st.tabs(["Introduction", "Salaries Charts"])
 
 with tab1:
     st.markdown("""
-    ## 🎈Welcome to the Higher Education Employee Salaries Explorer!
+    ## Welcome to the Higher Education Employee Salaries Explorer!
 
-    🔎This interactive tool allows you to explore average salary trends for different job descriptions in the higher education sector. You can select a specific job description from the sidebar to view the average earnings over time.
+    This interactive tool allows you to explore average salary trends for different job descriptions in the higher education sector. You can select a specific job description from the sidebar to view the average earnings over time.
 
     ### 🚀How to Use:
 
@@ -102,3 +102,21 @@ with tab2:
     st.altair_chart(mm_chart)   
 
     st.markdown('<p style="color: lightgrey;">--：trendline</p>', unsafe_allow_html=True)
+    # Create a histogram
+    histogram_chart = alt.Chart(filtered_df).mark_bar().encode(
+        alt.X('Average Earnings', bin=True),
+        alt.Y('count()')
+    ).properties(
+        title=f"Distribution of Earnings for {job_description}",
+        width=600,
+        height=400,
+    ).configure_axis(
+        labelFontSize=12,
+        titleFontSize=14,
+        grid=False,
+        domain=True,
+        labelColor='black'
+    )
+
+    # Display the histogram
+    st.altair_chart(histogram_chart)

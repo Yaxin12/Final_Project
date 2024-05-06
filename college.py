@@ -49,9 +49,9 @@ with tab2:
         filtered_year_df = salary_df
 
     # Get unique values from the "School" column
-    unique_colleges = filtered_year_df['School'].unique()
-    # Convert unique colleges to a Python list
-    college_list = unique_colleges.tolist()
+    unique_colleges = filtered_year_df['School'].astype(str).unique()
+    # Convert unique colleges to a Python list and sort them
+    college_list = sorted(unique_colleges.tolist())
     college_list.insert(0, 'All Colleges')
     # Create a selectbox for the colleges
     selected_college = st.selectbox('Select a College', college_list)
@@ -62,9 +62,9 @@ with tab2:
         filtered_college_df = filtered_year_df
 
     # Get unique values from the "Department" column
-    unique_departments = filtered_college_df['Department'].unique()
-    # Convert unique departments to a Python list
-    department_list = unique_departments.tolist()
+    unique_departments = filtered_college_df['Department'].astype(str).unique()
+    # Convert unique departments to a Python list and sort them
+    department_list = sorted(unique_departments.tolist())
     department_list.insert(0, 'All Dept')
     # Create a selectbox for the departments within the selected college
     selected_department = st.selectbox('Select a Department', department_list)
@@ -105,4 +105,4 @@ with tab2:
             else:
                 if default_num_jobs > 0:
                     col.metric(label=job, value=num_staff)
-                    default_num_jobs -= 1 
+                    default_num_jobs -= 1
